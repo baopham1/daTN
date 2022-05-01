@@ -9,8 +9,19 @@ router.get('/', function(req, res, next) {
 
 router.get('/nguoidung', async function(req, res, next) {
   const users = await userController.get();
-  
-    res.render('nguoidung',{users:users});
+  let newuser =[]
+  if(users?.length>0){
+     newuser = users.map(i=>{
+      if(i.role === 1 )
+      return {...i._doc,role:"quản trị viên"}
+      else{
+        return {...i._doc,role:"người dùng"}
+      }
+    })
+console.log("dong21",newuser)
+  }
+    res.render('nguoidung',{users:newuser});
+    
   });
 router.post('/switch-role/:id', async function(req, res, next) {
   const {params} = req;

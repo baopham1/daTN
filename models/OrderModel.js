@@ -8,6 +8,8 @@ const orderSchema = new Schema({
     totalmoney: { type: Number },
     productQuantity: { type: Number },
     productArr:{type: Array},
+    published:{type:Date},
+    userid:{type: ObjectId}
 });
 
 module.exports = mongoose.model('order', orderSchema);

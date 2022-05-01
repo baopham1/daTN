@@ -74,6 +74,9 @@ router.get('/nguoidung', function (req, res, next) {
 router.get('/trangchu', function (req, res, next) {
   res.render('trangchu');
 });
+router.get('/chi-tiet-don-hang', function (req, res, next) {
+  res.render('chi-tiet-don-hang');
+});
 
 router.post('/test-validation', async function (req, res, next) {
   await check('username').trim().isLength({min:6})

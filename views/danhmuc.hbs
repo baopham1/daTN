@@ -43,7 +43,7 @@
   <div class="container">
     <div class="row pad-botm">
       <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-        Add Category
+        Thêm danh mục
       </button>
 
       <div>
@@ -56,23 +56,23 @@
                   ×
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                  Modal Add Category
+                  Thêm danh mục
                 </h4>
               </div>
               <div class="panel-body">
                 <form role="form" method="post" action="/danhmuc">
 
                   <div class="form-group">
-                    <label>Name</label>
+                    <label>Tên danh mục</label>
                     <input class="form-control" type="text" name="name" />
 
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">
-                  Close
+                  Đóng
                 </button>
                     <button type="submit" class="btn btn-primary">
-                      Save changes
+                      Lưu
                     </button>
                   </div>
                 </form>
@@ -118,7 +118,7 @@
       <div class="col-md-12">
         <!--    Hover Rows  -->
         <div class="panel panel-default">
-          <div class="panel-heading">Category List</div>
+          <div class="panel-heading">Danh sách danh mục</div>
           <div class="panel-body">
             <div class="table-responsive">
               <table class="table table-hover">
@@ -126,8 +126,8 @@
                   <tr>
                     <th>STT</th>
                     
-                    <th>NAME</th>
-                    <th>ACTIONS</th>
+                    <th>Tên danh mục</th>
+                    <th>Điều hướng</th>
 
                   </tr>
                 </thead>
@@ -142,14 +142,14 @@
                       {{!-- <a href="/sanpham/{{this.id}}/edit"> --}}
                         <button class="btn btn-primary" onclick="goEdit('{{this._id}}')">
                           <i class="fa fa-edit"></i>
-                          Edit
+                          Sửa
                         </button>
                         {{! </a> }}
 
                       <button class="btn btn-danger" data-toggle="modal" data-target="#myModalDelete"
                         onclick="goDelete('{{this._id}}')">
                         <i class="fa fa-pencil"></i>
-                        Delete
+                        Xóa
                       </button>
                     </td>
                   </tr>

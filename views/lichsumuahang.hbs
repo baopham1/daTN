@@ -154,10 +154,10 @@
                                     <tr>
                                         <th>STT</th>
                                         
-                                        <th>Tên</th>
+                                        <th>Số lượng</th>
                                         <th>Giá</th>
-                                        <th>Danh mục</th>
-                                        <th>Hình ảnh</th>
+                                        <th>Ngày</th>
+                                        
                                         
                                     </tr>
                                 </thead>
@@ -167,12 +167,13 @@
                                     <tr>
                                         <td>{{sothutu @index}}</td>
                                         
-                                        <td>{{this.address}}</td>
-                                        <td>{{this.totalmoney}} VND</td>
-                                        
-                                        
                                         <td>{{this.productQuantity}}</td>
-                                        <td>{{this.productArr}}</td>
+                                        <td>{{this.totalmoney}} VND</td>
+                                        <td>{{formatDate this.published}} </td>
+                                        
+                                        
+                                        
+                                        <td><a href="../order/chitietdonhang/{{this._id}}" >Chi tiết</a></td>
                                         
                                        
                                         {{!-- <td>

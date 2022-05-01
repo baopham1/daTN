@@ -25,16 +25,18 @@ router.post('/',[authen.checkLogin], async function(req, res, next) {
   .withMessage('Name min 6 max 50')
   .bail()
   .run(req);
-
+ 
   const result = validationResult(req);
   
   if (!result.isEmpty) {
     res.status(400).json({ status:false, error:result.array()});
   } else {
+    
     const {body} =req;
+    console.log("dong 36",body)
     await productController.insert(body);
     res.status(200).json({ status:true});
-
+    
   }
   });
 

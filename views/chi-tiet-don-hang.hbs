@@ -30,7 +30,7 @@
 
                             <li><a href="/users/nguoidung">Tài khoản</a></li>
                             <li><a href="/danhmuc">Danh mục</a></li>
-                            <li><a href="/danhsachsp" class="menu-top-active">Sản phẩm</a></li>
+                            <li><a href="/danhsachsp" >Sản phẩm</a></li>
                             <li><a href="/api/order/lichsumuahang">Lịch sử mua hàng</a></li>
 
                         </ul>
@@ -54,89 +54,7 @@
                     <div class="panel panel-default">
                         <div class="content-header">
                             <h4 class="header-line">Danh sách sản phẩm</h4>
-                            <div class="right-div">
-                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                                    Thêm sản phẩm
-                                </button>
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-                                    aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="myModalLabel">Thêm sản phẩm</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="panel-body">
-                                                    <form role="form">
-                                                        <div class="form-group ">
-                                                            <label class="control-label" for="name">Tên sản phẩm</label>
-                                                            <input type="text" class="form-control" id="name"
-                                                                onchange="validationForm()" name="name" />
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label class="control-label" for="price">Giá</label>
-                                                            <input type="number" class="form-control" id="price"
-                                                                onchange="validationForm()" name="price" />
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label class="control-label" for="name">Size</label>
-                                                            <input type="text" class="form-control" id="size" name="size"
-                                                                onchange="validationForm()"  />
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label class="control-label" for="category">Danh mục</label>
-                                                            <input type="text" class="form-control" id="category" name="category"
-                                                                onchange="validationForm()"  />
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <img id="img-view" class="display-none img-cover"
-                                                                width="170" height="170" src="" />
-                                                            <input onchange="validationForm()" type="hidden"
-                                                                name="image" id="image" />
-                                                            <input type="file" onchange="onChangeFile()"
-                                                                class="form-control-file border" id="img-file" />
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label class="control-label"
-                                                                for="description">Mô tả</label>
-                                                            <textarea type="text" rows="3" class="form-control"
-                                                                id="description" name="description">
-
-                                        </textarea>
-                                                        </div>
-                                                        <div class="form-group checkbox">
-                                                            <label class="control-label" for="available">
-
-                                                                <input type="checkbox" value="{{products.available}}"
-                                                                    id="available" name="available" />
-
-                                                                Available
-                                                            </label>
-                                                        </div>
-                                                        <div class="form-group ">
-                                                            <label class="control-label"
-                                                                for="published">Ngày tạo</label>
-                                                            <input onchange="validationForm()" type="date"
-                                                                class="form-control" id="published" name="published" />
-                                                        </div>
-
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default"
-                                                                data-dismiss="modal">Đóng</button>
-                                                            <button disabled id="buttonSave" onclick="onSave()"
-                                                                type="button" class="btn btn-primary">Thêm</button>
-                                                            <h2 id="error-msg"></h2>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -151,9 +69,9 @@
                                             <th>Hình ảnh</th>
                                             <th>Mô tả</th>
                                             <th>Size</th>
-                                            <th>Available</th>
+                                            
 
-                                            <th>Điều hướng</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -168,19 +86,9 @@
                                             </td>
                                             <td>{{this.description}}</td>
                                             <td>{{this.size}}</td>
-                                            <td>{{this.available}}</td>
+                                            
 
-                                            <td>
-
-                                                <a href="/danhsachsp/{{this._id}}/edit"><button
-                                                        class="btn btn-primary"><i class="fa fa-edit "></i>
-                                                        Sửa</button></a>
-
-                                                <button onclick="goDelete('{{this._id}}')" class="btn btn-danger"
-                                                    data-target="#DeleteModal" data-toggle="modal"><i
-                                                        class="fa fa-pencil"></i>
-                                                    Xóa</button>
-                                            </td>
+                                            
                                         </tr>
                                         {{/each}}
                                     </tbody>
